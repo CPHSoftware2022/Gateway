@@ -33,4 +33,28 @@ public class EndpointController {
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
         return ResponseEntity.ok(responseEntity.getBody());
     }
+    @GetMapping("/restaurant/{id}")
+    public ResponseEntity<Object> getRestaurantById(@PathVariable("id") Long id){
+        String url = "http://localhost:8100/restaurant/" + id;
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
+        return ResponseEntity.ok(responseEntity.getBody());
+    }
+    @GetMapping("/restaurants")
+    public ResponseEntity<Object> getRestaurants(){
+        String url = "http://localhost:8100/restaurants";
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
+        return ResponseEntity.ok(responseEntity.getBody());
+    }
+    @GetMapping("/item/{id}")
+    public ResponseEntity<Object> getRestaurantById(@PathVariable("id") Long id){
+        String url = "http://localhost:8100/item/" + id;
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
+        return ResponseEntity.ok(responseEntity.getBody());
+    }
+    @GetMapping("/restaurantsItems/{id}")
+    public ResponseEntity<Object> getRestaurants(@PathVariable("id") Long id){
+        String url = "http://localhost:8100/restaurantItems"/ + id;
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
+        return ResponseEntity.ok(responseEntity.getBody());
+    }
 }
