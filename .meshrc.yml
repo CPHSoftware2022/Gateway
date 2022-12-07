@@ -1,0 +1,5 @@
+sources:
+  - name: Customer
+    handler:
+      rest:
+        endpoint: https://localhost:8080/customer

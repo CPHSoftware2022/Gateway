@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: discovery-client
+spec:
+  containers:
+    - name: discovery-client
+      image: discovery-docker-image:latest
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 8080
